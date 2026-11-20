@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07110d">
+  <meta name="description" content="Strip FIFA — tournoi de salon, équipes au hasard, packs et classement.">
+  <title>Strip FIFA</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23e7c576' d='M8 4h48v40L32 60 8 44z'/%3E%3Ctext x='32' y='34' text-anchor='middle' font-family='Impact,sans-serif' font-size='20' fill='%23142018'%3ESF%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@380;500;650;750&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Aller au contenu</a>
+  <header class="top">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">SF</span>
+      <div>
+        <p class="eyebrow" id="eyebrow">Tournoi de salon</p>
+        <h1><em>Strip</em> <span>FIFA</span></h1>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Sections">
+      <button type="button" class="nav-btn on" data-go="setup">Soirée</button>
+      <button type="button" class="nav-btn" data-go="draw">Tirage</button>
+      <button type="button" class="nav-btn" data-go="matches">Matchs</button>
+      <button type="button" class="nav-btn" data-go="rank">Classement</button>
+    </nav>
+    <div class="top-actions">
+      <button type="button" class="ghost" data-action="toggle-sound" id="sound-btn" aria-pressed="false">Son</button>
+      <button type="button" class="ghost" data-action="toggle-express" id="express-btn" aria-pressed="false">Express</button>
+      <button type="button" class="ghost" data-action="toggle-tv" id="tv-btn" aria-pressed="false">Salon</button>
+      <button type="button" class="ghost" data-action="rules">Règles</button>
+    </div>
+  </header>
+
+  <div class="steps-wrap">
+    <ol class="steps" id="steps">
+      <li data-step="setup">Vestiaire</li>
+      <li data-step="draft">Équipes</li>
+      <li data-step="live">Matchs</li>
+    </ol>
+    <p class="status-pill" id="status">Lobby</p>
+  </div>
+
+  <main id="main">
+    <section id="view-setup" class="view">
+      <div class="hero">
+        <div class="hero-copy">
+          <h2 class="hero-title"><em>Strip</em> FIFA</h2>
+        </div>
+      </div>
+      <div class="setup-grid">
+        <div class="card">
+          <p class="kicker">Vestiaire</p>
+          <h2>Joueurs</h2>
+          <label for="night">Nom de la soirée</label>
+          <input id="night" maxlength="40" autocomplete="off" placeholder="Samedi chez Alex">
+          <div id="lock-note" class="lock-note" hidden>Tirage lancé : joueurs et chapeau bloqués.</div>
+          <label for="player-name">Nouveau joueur</label>
+          <div class="add-row">
+            <input id="player-name" maxlength="18" autocomplete="off" placeholder="Ajouter un joueur">
+            <button type="button" class="gold" data-action="add-player" id="add-player">Ajouter</button>
+          </div>
+          <ul id="player-list" class="player-list"></ul>
+          <p class="label">Format</p>
+          <div class="formats" id="formats">
+            <button type="button" class="format" data-action="set-format" data-format="solo">
+              <strong>1</strong>
+              <span>Solo</span>
+            </button>
+            <button type="button" class="format" data-action="set-format" data-format="duo">
+              <strong>2</strong>
+              <span>Duo</span>
+            </button>
+            <button type="button" class="format" data-action="set-format" data-format="trio">
+              <strong>3</strong>
+              <span>Trio</span>
+            </button>
+          </div>
+          <p id="format-hint" class="hint"></p>
+          <button type="button" class="gold xl" id="start-btn" data-action="start-draw">Lancer le tirage</button>
+          <div class="btn-row">
+            <button type="button" class="ghost" data-action="reset-draw" id="reset-draw">Refaire le tirage</button>
+            <button type="button" class="danger" data-action="reset-all">Nouvelle soirée</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <p class="kicker">Chapeau</p>
+              <h2>Équipes</h2>
+            </div>
+            <p class="hat-count"><span id="hat-count">0</span> dans le chapeau</p>
+          </div>
+          <div class="filters" id="team-filters">
+            <button type="button" class="chip-btn on" data-action="team-filter" data-filter="all">Toutes</button>
+            <button type="button" class="chip-btn" data-action="team-filter" data-filter="club">Clubs</button>
+            <button type="button" class="chip-btn" data-action="team-filter" data-filter="nation">Sélections</button>
+          </div>
+          <div class="add-row">
+            <input id="team-search" type="search" placeholder="Rechercher un club ou une sélection" autocomplete="off">
+          </div>
+          <div class="btn-row tight">
+            <button type="button" class="ghost sm" data-action="select-popular">Populaires</button>
+            <button type="button" class="ghost sm" data-action="select-visible">Cocher l’affichage</button>
+            <button type="button" class="ghost sm" data-action="clear-visible">Vider l’affichage</button>
+          </div>
+          <div id="team-grid" class="team-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-draw" class="view" hidden>
+      <div class="section-head">
+        <div>
+          <p class="kicker">Tirage au sort</p>
+          <h2 id="draw-title">La roue</h2>
+        </div>
+        <p id="draw-lead" class="hint"></p>
+      </div>
+
+      <div id="draw-empty" class="card empty" hidden>
+        <h2>Aucun joueur</h2>
+        <p>Ajoute des joueurs d’abord.</p>
+        <button type="button" class="gold" data-go="setup">Retour au vestiaire</button>
+      </div>
+
+      <div id="draft-panel" class="draw-grid" hidden>
+        <div class="wheel-col">
+          <div class="wheel-wrap" id="wheel-wrap">
+            <div class="pointer" aria-hidden="true"></div>
+            <canvas id="wheel" width="460" height="460" aria-label="Roue des joueurs"></canvas>
+          </div>
+          <p id="draft-status" class="hint center"></p>
+          <div class="btn-row center">
+            <button type="button" class="gold xl" id="spin-btn" data-action="spin" data-busy="1">Tourner la roue</button>
+            <button type="button" class="ghost" id="auto-btn" data-action="auto-draft" data-busy="1">Tout former</button>
+          </div>
+        </div>
+        <div id="slot-board" class="slot-board"></div>
+      </div>
+
+      <div id="pack-panel" hidden>
+        <div id="pack-grid" class="pack-grid"></div>
+        <div id="pack-actions" class="btn-row"></div>
+      </div>
+    </section>
+
+    <section id="view-matches" class="view" hidden>
+      <div class="section-head">
+        <div>
+          <p class="kicker">Calendrier</p>
+          <h2>Les matchs</h2>
+        </div>
+        <p id="leader-line" class="hint"></p>
+      </div>
+      <div id="match-stage"></div>
+      <div id="match-tools" class="btn-row"></div>
+      <div id="match-list"></div>
+    </section>
+
+    <section id="view-rank" class="view" hidden>
+      <div class="section-head">
+        <div>
+          <p class="kicker">Tableau</p>
+          <h2>Classement</h2>
+        </div>
+        <div id="rank-tools" class="btn-row"></div>
+      </div>
+      <div id="rank-stage"></div>
+    </section>
+
+    <footer class="foot">
+      Strip FIFA · non affilié à EA Sports ni à la FIFA
+    </footer>
+  </main>
+
+  <dialog id="modal"></dialog>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <div id="toast" role="status"></div>
+  <input id="score-photo" type="file" accept="image/*" capture="environment" hidden>
+  <script src="app.js" defer></script>
+</body>
+</html>
