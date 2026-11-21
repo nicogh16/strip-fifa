@@ -65,6 +65,7 @@
             <button type="button" class="gold" data-action="add-player" id="add-player">Ajouter</button>
           </div>
           <ul id="player-list" class="player-list"></ul>
+          <p class="hint" id="roster-note">Les noms restent enregistrés. Une nouvelle soirée les remet tout de suite, et tu peux en ajouter ou en retirer.</p>
           <p class="label">Format</p>
           <div class="formats" id="formats">
             <button type="button" class="format" data-action="set-format" data-format="solo">
@@ -132,6 +133,7 @@
       <div id="draft-panel" class="draw-grid" hidden>
         <div class="wheel-col">
           <div class="wheel-wrap" id="wheel-wrap">
+            <div class="wheel-halo" aria-hidden="true"></div>
             <div class="pointer" aria-hidden="true"></div>
             <canvas id="wheel" width="460" height="460" aria-label="Roue des joueurs"></canvas>
           </div>

@@ -3,19 +3,24 @@ const TEAMS = [
   { id: "mci", name: "Manchester City", short: "MCI", colors: ["#6cabdd", "#1c2c5b"], mark: "split", rarity: "epique", kind: "club", league: "Premier League", place: "2e", popular: true },
   { id: "mun", name: "Manchester United", short: "MUN", colors: ["#da291c", "#fbe122"], mark: "split", rarity: "epique", kind: "club", league: "Premier League", place: "3e", popular: true },
   { id: "avl", name: "Aston Villa", short: "AVL", colors: ["#670e36", "#95bfe5"], mark: "split", rarity: "rare", kind: "club", league: "Premier League", place: "4e", popular: true },
+  { id: "liv", name: "Liverpool", short: "LIV", colors: ["#c8102e", "#00a398"], mark: "split", rarity: "legende", kind: "club", league: "Premier League", popular: true },
+  { id: "che", name: "Chelsea", short: "CHE", colors: ["#034694", "#dba111"], mark: "split", rarity: "epique", kind: "club", league: "Premier League", popular: true },
   { id: "bar", name: "Barcelone", short: "FCB", colors: ["#a50044", "#004d98", "#edbb00"], mark: "stripes", rarity: "legende", kind: "club", league: "Liga", place: "1er", popular: true },
   { id: "rma", name: "Real Madrid", short: "RMA", colors: ["#ffffff", "#febe10"], mark: "split", rarity: "epique", kind: "club", league: "Liga", place: "2e", popular: true },
   { id: "vil", name: "Villarreal", short: "VIL", colors: ["#ffe667", "#005ca9"], mark: "split", rarity: "rare", kind: "club", league: "Liga", place: "3e", popular: true },
-  { id: "atm", name: "Atlético", short: "ATM", colors: ["#cb3524", "#ffffff", "#272e61"], mark: "stripes", rarity: "rare", kind: "club", league: "Liga", place: "4e", popular: true },
-  { id: "int", name: "Inter", short: "INT", colors: ["#010e80", "#000000"], mark: "stripes", rarity: "legende", kind: "club", league: "Serie A", place: "1er", popular: true },
+  { id: "atm", name: "Atlético Madrid", short: "ATM", colors: ["#cb3524", "#ffffff", "#272e61"], mark: "stripes", rarity: "epique", kind: "club", league: "Liga", place: "4e", popular: true },
+  { id: "int", name: "Inter Milan", short: "INT", colors: ["#010e80", "#000000"], mark: "stripes", rarity: "legende", kind: "club", league: "Serie A", place: "1er", popular: true },
+  { id: "mil", name: "AC Milan", short: "MIL", colors: ["#fb090b", "#111111"], mark: "stripes", rarity: "epique", kind: "club", league: "Serie A", popular: true },
+  { id: "juv", name: "Juventus", short: "JUV", colors: ["#111111", "#ffffff"], mark: "split", rarity: "epique", kind: "club", league: "Serie A", popular: true },
   { id: "nap", name: "Naples", short: "NAP", colors: ["#12a0d7", "#003c82"], mark: "split", rarity: "epique", kind: "club", league: "Serie A", place: "2e", popular: true },
-  { id: "rom", name: "Rome", short: "ROM", colors: ["#8e1f2f", "#f0bc42"], mark: "split", rarity: "rare", kind: "club", league: "Serie A", place: "3e", popular: true },
+  { id: "rom", name: "AS Roma", short: "ROM", colors: ["#8e1f2f", "#f0bc42"], mark: "split", rarity: "epique", kind: "club", league: "Serie A", place: "3e", popular: true },
   { id: "com", name: "Côme", short: "COM", colors: ["#0c2340", "#ffffff"], mark: "split", rarity: "rare", kind: "club", league: "Serie A", place: "4e", popular: true },
-  { id: "bay", name: "Bayern", short: "BAY", colors: ["#dc052d", "#ffffff", "#0066b2"], mark: "split", rarity: "legende", kind: "club", league: "Bundesliga", place: "1er", popular: true },
+  { id: "bay", name: "Bayern Munich", short: "BAY", colors: ["#dc052d", "#ffffff", "#0066b2"], mark: "split", rarity: "legende", kind: "club", league: "Bundesliga", place: "1er", popular: true },
   { id: "bvb", name: "Dortmund", short: "BVB", colors: ["#fde100", "#000000"], mark: "split", rarity: "epique", kind: "club", league: "Bundesliga", place: "2e", popular: true },
-  { id: "rbl", name: "Leipzig", short: "RBL", colors: ["#dd0741", "#ffffff"], mark: "split", rarity: "rare", kind: "club", league: "Bundesliga", place: "3e", popular: true },
+  { id: "rbl", name: "RB Leipzig", short: "RBL", colors: ["#dd0741", "#ffffff"], mark: "split", rarity: "rare", kind: "club", league: "Bundesliga", place: "3e", popular: true },
   { id: "vfb", name: "Stuttgart", short: "VFB", colors: ["#ffffff", "#e32219"], mark: "band", rarity: "rare", kind: "club", league: "Bundesliga", place: "4e", popular: true },
   { id: "psg", name: "PSG", short: "PSG", colors: ["#004170", "#da291c"], mark: "split", rarity: "legende", kind: "club", league: "Ligue 1", place: "1er", popular: true },
+  { id: "asm", name: "Monaco", short: "ASM", colors: ["#e30613", "#ffffff"], mark: "split", rarity: "epique", kind: "club", league: "Ligue 1", popular: true },
   { id: "rcl", name: "Lens", short: "RCL", colors: ["#ffd100", "#ed1c24"], mark: "split", rarity: "epique", kind: "club", league: "Ligue 1", place: "2e", popular: true },
   { id: "lil", name: "Lille", short: "LIL", colors: ["#c8102e", "#ffffff"], mark: "split", rarity: "rare", kind: "club", league: "Ligue 1", place: "3e", popular: true },
   { id: "ol", name: "Lyon", short: "OL", colors: ["#ffffff", "#003da5", "#e10000"], mark: "band", rarity: "rare", kind: "club", league: "Ligue 1", place: "4e", popular: true },
@@ -26,20 +31,15 @@ const TEAMS = [
   { id: "mar", name: "Maroc", short: "MAR", colors: ["#c1272d", "#006233"], mark: "band", rarity: "epique", kind: "nation", league: "Coupe du monde", place: "1/4", popular: true },
   { id: "bel", name: "Belgique", short: "BEL", colors: ["#000000", "#fdda24", "#ef3340"], mark: "band", rarity: "epique", kind: "nation", league: "Coupe du monde", place: "1/4", popular: true },
   { id: "sui", name: "Suisse", short: "SUI", colors: ["#ff0000", "#ffffff"], mark: "split", rarity: "rare", kind: "nation", league: "Coupe du monde", place: "1/4", popular: true },
-  { id: "nor", name: "Norvège", short: "NOR", colors: ["#ba0c2f", "#ffffff", "#00205b"], mark: "band", rarity: "rare", kind: "nation", league: "Coupe du monde", place: "1/4", popular: true }
+  { id: "nor", name: "Norvège", short: "NOR", colors: ["#ba0c2f", "#ffffff", "#00205b"], mark: "band", rarity: "rare", kind: "nation", league: "Coupe du monde", place: "1/4", popular: true },
+  { id: "ben", name: "Benfica", short: "BEN", colors: ["#e53027", "#ffffff"], mark: "split", rarity: "epique", kind: "club", league: "Liga Portugal", popular: true }
 ];
 const LEGACY_TEAMS = [
-  { id: "liv", name: "Liverpool", short: "LIV", colors: ["#c8102e", "#00a398"] },
-  { id: "che", name: "Chelsea", short: "CHE", colors: ["#034694", "#dba111"] },
-  { id: "juv", name: "Juventus", short: "JUV", colors: ["#111111", "#ffffff"] },
-  { id: "mil", name: "Milan", short: "MIL", colors: ["#fb090b", "#111111"] },
   { id: "om", name: "Marseille", short: "OM", colors: ["#2faee0", "#f4f4f4"] },
   { id: "ajx", name: "Ajax", short: "AJX", colors: ["#d2122e", "#f4f4f4"] },
-  { id: "ben", name: "Benfica", short: "BEN", colors: ["#e53027", "#f4f4f4"] },
   { id: "fcp", name: "Porto", short: "FCP", colors: ["#003893", "#f4f4f4"] },
   { id: "tot", name: "Tottenham", short: "TOT", colors: ["#132257", "#f4f4f4"] },
   { id: "b04", name: "Leverkusen", short: "B04", colors: ["#e32221", "#111111"] },
-  { id: "asm", name: "Monaco", short: "ASM", colors: ["#e30613", "#f4f4f4"] },
   { id: "ren", name: "Rennes", short: "REN", colors: ["#e30613", "#111111"] },
   { id: "nic", name: "Nice", short: "NIC", colors: ["#111111", "#e30613"] },
   { id: "new", name: "Newcastle", short: "NEW", colors: ["#241f20", "#f4f4f4"] },
@@ -89,6 +89,7 @@ function keepCloth(item, seen) {
   return [{ id, label: cloth.label }];
 }
 const STORE_KEY = "strip-fifa-v1";
+const ROSTER_KEY = "strip-fifa-roster";
 
 const $ = (id) => document.getElementById(id);
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -153,10 +154,13 @@ function sanitize() {
   state.players.forEach((person) => {
     if (!/^#[0-9a-fA-F]{6}$/.test(person.color || "")) person.color = PALETTE[0];
   });
+  if (!Array.isArray(state.selectedTeams)) state.selectedTeams = fresh().selectedTeams;
   const teamIds = new Set(TEAMS.map((team) => team.id));
-  if (state.catalog !== 2) {
-    state.selectedTeams = TEAMS.map((team) => team.id);
-    state.catalog = 2;
+  if (state.catalog !== 3) {
+    ["liv", "che", "juv", "mil", "asm", "ben"].forEach((id) => {
+      if (!state.selectedTeams.includes(id)) state.selectedTeams.push(id);
+    });
+    state.catalog = 3;
   }
   state.selectedTeams = (state.selectedTeams || []).filter((id) => teamIds.has(id));
   if (!state.selectedTeams.length) state.selectedTeams = fresh().selectedTeams;
@@ -190,8 +194,37 @@ function sanitize() {
   if (!["all", "club", "nation"].includes(state.teamFilter)) state.teamFilter = "all";
 }
 
+function cleanRoster(list) {
+  const seen = new Set();
+  return (list || []).flatMap((item) => {
+    const name = String(item?.name || "").trim().replace(/\s+/g, " ").slice(0, 18);
+    const key = name.toLocaleLowerCase("fr");
+    if (!name || seen.has(key)) return [];
+    seen.add(key);
+    return [{
+      id: String(item.id || uid()),
+      name,
+      color: /^#[0-9a-fA-F]{6}$/.test(item.color || "") ? item.color : PALETTE[0]
+    }];
+  }).slice(0, 16);
+}
+
+function rememberedPlayers() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(ROSTER_KEY) || "null");
+    return Array.isArray(raw) ? cleanRoster(raw) : [];
+  } catch {
+    return [];
+  }
+}
+
+function rememberPlayers(list) {
+  localStorage.setItem(ROSTER_KEY, JSON.stringify(cleanRoster(list)));
+}
+
 function save() {
   localStorage.setItem(STORE_KEY, JSON.stringify(state));
+  if (state?.players) rememberPlayers(state.players);
 }
 
 function toast(message) {
@@ -301,6 +334,36 @@ const confetti = {
   }
 };
 
+const liveWheels = new Set();
+const logoCache = new Map();
+function readyLogo(src) {
+  if (!src) return null;
+  let rec = logoCache.get(src);
+  if (!rec) {
+    const image = new Image();
+    rec = { image, ready: false };
+    image.onload = () => {
+      rec.ready = true;
+      liveWheels.forEach((wheel) => {
+        if (wheel.canvas?.isConnected) wheel.draw();
+      });
+    };
+    image.src = src;
+    logoCache.set(src, rec);
+  }
+  return rec.ready ? rec.image : null;
+}
+function shadeHex(hex, amt) {
+  const raw = String(hex || "").replace("#", "");
+  if (raw.length !== 6) return hex || "#234838";
+  const n = parseInt(raw, 16);
+  const chan = (shift) => Math.max(0, Math.min(255, ((n >> shift) & 255) + Math.round(amt * 255)));
+  return `rgb(${chan(16)}, ${chan(8)}, ${chan(0)})`;
+}
+function easeSpin(t) {
+  return 1 - (1 - t) ** 4.2;
+}
+
 function Wheel() {}
 Wheel.prototype.mount = function mount(canvas) {
   this.canvas = canvas;
@@ -308,6 +371,8 @@ Wheel.prototype.mount = function mount(canvas) {
   this.rot = this.rot || 0;
   this.items = this.items || [];
   this.size = this.size || 0;
+  this.landed = -1;
+  liveWheels.add(this);
 };
 Wheel.prototype.fit = function fit() {
   if (!this.canvas) return;
@@ -334,15 +399,31 @@ Wheel.prototype.indexAtPointer = function indexAtPointer() {
   const seg = (Math.PI * 2) / count;
   return Math.min(count - 1, Math.floor(mod(-this.rot, Math.PI * 2) / seg));
 };
+Wheel.prototype.bumpPointer = function bumpPointer(slow) {
+  if (!slow) return;
+  const root = this.canvas?.parentElement;
+  const pointer = root?.querySelector(".pointer") || root?.parentElement?.querySelector(".pointer");
+  if (!pointer?.animate) return;
+  this.pointerAnim?.cancel();
+  this.pointerAnim = pointer.animate([
+    { transform: "translateX(-50%) rotate(0deg)" },
+    { transform: "translateX(-50%) rotate(12deg)", offset: 0.35 },
+    { transform: "translateX(-50%) rotate(0deg)" }
+  ], { duration: 120, easing: "ease-out" });
+};
 Wheel.prototype.draw = function draw() {
   if (!this.ctx || !this.size) return;
   const ctx = this.ctx;
   const size = this.size;
   const cx = size / 2;
   const cy = size / 2;
-  const rim = size / 2 - 8;
-  const colorR = rim - 14;
+  const rim = size / 2 - 10;
+  const colorR = rim - 16;
   ctx.clearRect(0, 0, size, size);
+  ctx.beginPath();
+  ctx.arc(cx, cy, rim + 4, 0, Math.PI * 2);
+  ctx.fillStyle = "#070c0b";
+  ctx.fill();
   const items = this.items;
   if (!items.length) {
     ctx.beginPath();
@@ -357,73 +438,129 @@ Wheel.prototype.draw = function draw() {
     return;
   }
   const seg = (Math.PI * 2) / items.length;
+  const active = this.indexAtPointer();
+  const crowded = items.length > 16;
   ctx.save();
   ctx.translate(cx, cy);
   ctx.rotate(this.rot);
   items.forEach((item, index) => {
-    const start = -Math.PI / 2 + index * seg;
+    const start = -Math.PI / 2 + index * seg + 0.012;
+    const end = start + seg - 0.024;
     ctx.beginPath();
     ctx.moveTo(0, 0);
-    ctx.arc(0, 0, colorR, start, start + seg);
+    ctx.arc(0, 0, colorR, start, end);
     ctx.closePath();
-    ctx.fillStyle = item.color;
+    const grad = ctx.createRadialGradient(0, 0, colorR * 0.08, 0, 0, colorR);
+    grad.addColorStop(0, shadeHex(item.color, -0.28));
+    grad.addColorStop(0.62, item.color);
+    grad.addColorStop(1, item.color2 || item.color);
+    ctx.fillStyle = grad;
     ctx.fill();
-    ctx.strokeStyle = "rgba(0,0,0,.35)";
-    ctx.lineWidth = 2;
-    ctx.stroke();
+    if (index === active) {
+      ctx.fillStyle = "rgba(255,255,255,.2)";
+      ctx.fill();
+    }
+    if (index === this.landed) {
+      ctx.beginPath();
+      ctx.arc(0, 0, colorR - 3, start, end);
+      ctx.strokeStyle = "#fff6d0";
+      ctx.lineWidth = 4;
+      ctx.stroke();
+    }
     ctx.save();
-    const mid = start + seg / 2;
+    const mid = (start + end) / 2;
     ctx.rotate(mid);
-    const abs = mod(this.rot + mid, Math.PI * 2);
-    const flip = abs > Math.PI / 2 && abs < (Math.PI * 3) / 2;
-    ctx.fillStyle = item.ink;
-    const font = items.length > 10 ? 12 : items.length > 6 ? 15 : 18;
-    ctx.font = `700 ${font}px Outfit, Segoe UI, sans-serif`;
-    ctx.textBaseline = "middle";
-    let label = item.label;
-    const edge = colorR - 14;
-    const maxWidth = edge - 46;
-    while (label.length > 1 && ctx.measureText(label).width > maxWidth) label = `${label.slice(0, -2)}…`;
-    if (flip) {
-      ctx.rotate(Math.PI);
-      ctx.textAlign = "left";
-      ctx.fillText(label, -edge, 0);
-    } else {
-      ctx.textAlign = "right";
-      ctx.fillText(label, edge, 0);
+    const logo = readyLogo(item.logo);
+    if (item.logo) {
+      const dist = colorR * (crowded ? 0.68 : 0.62);
+      const radius = Math.max(11, Math.min(crowded ? 18 : 26, colorR * seg * 0.42));
+      if (logo) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(dist, 0, radius, 0, Math.PI * 2);
+        ctx.clip();
+        ctx.drawImage(logo, dist - radius, -radius, radius * 2, radius * 2);
+        ctx.restore();
+        ctx.beginPath();
+        ctx.arc(dist, 0, radius, 0, Math.PI * 2);
+        ctx.strokeStyle = "rgba(255,255,255,.85)";
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+      }
+    } else if (item.label) {
+      const abs = mod(this.rot + mid, Math.PI * 2);
+      const flip = abs > Math.PI / 2 && abs < (Math.PI * 3) / 2;
+      const room = colorR * 0.46;
+      let font = items.length > 8 ? 15 : 18;
+      ctx.fillStyle = item.ink;
+      ctx.textBaseline = "middle";
+      ctx.textAlign = "center";
+      let label = item.label;
+      const fit = () => {
+        ctx.font = `700 ${font}px Outfit, Segoe UI, sans-serif`;
+        return ctx.measureText(label).width;
+      };
+      while (font > 12 && fit() > room) font -= 1;
+      if (fit() > room) {
+        while (label.length > 3 && ctx.measureText(`${label}…`).width > room) label = label.slice(0, -1);
+        label = `${label}…`;
+      }
+      ctx.shadowColor = "rgba(0,0,0,.55)";
+      ctx.shadowBlur = 4;
+      if (flip) {
+        ctx.rotate(Math.PI);
+        ctx.fillText(label, -colorR * 0.62, 0);
+      } else ctx.fillText(label, colorR * 0.62, 0);
+      ctx.shadowBlur = 0;
     }
     ctx.restore();
   });
   ctx.restore();
   ctx.beginPath();
+  ctx.arc(cx, cy, colorR + 1, 0, Math.PI * 2);
+  ctx.lineWidth = 3;
+  ctx.strokeStyle = "rgba(0,0,0,.45)";
+  ctx.stroke();
+  ctx.beginPath();
   ctx.arc(cx, cy, rim, 0, Math.PI * 2);
-  ctx.lineWidth = 10;
+  ctx.lineWidth = 16;
+  ctx.strokeStyle = "#140f08";
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(cx, cy, rim, 0, Math.PI * 2);
+  ctx.lineWidth = 7;
   const rimGrad = ctx.createLinearGradient(0, 0, size, size);
-  rimGrad.addColorStop(0, "#fff0c2");
-  rimGrad.addColorStop(0.45, "#f0c86a");
-  rimGrad.addColorStop(1, "#9c7330");
+  rimGrad.addColorStop(0, "#fff6d4");
+  rimGrad.addColorStop(0.4, "#f0c86a");
+  rimGrad.addColorStop(1, "#8d6424");
   ctx.strokeStyle = rimGrad;
   ctx.stroke();
-  const lights = Math.max(items.length, 12);
+  const lights = Math.max(18, Math.min(items.length, 36));
   for (let i = 0; i < lights; i += 1) {
     const angle = -Math.PI / 2 + (i * Math.PI * 2) / lights;
+    const hot = Math.cos(i * 0.85 - this.rot * (this.spinning ? 5 : 0.35));
+    const bulb = rim - 1;
     ctx.beginPath();
-    ctx.arc(cx + Math.cos(angle) * (rim - 1), cy + Math.sin(angle) * (rim - 1), 3.1, 0, Math.PI * 2);
-    ctx.fillStyle = i % 2 ? "#e7c576" : "#3a3424";
+    ctx.arc(cx + Math.cos(angle) * bulb, cy + Math.sin(angle) * bulb, 2.8, 0, Math.PI * 2);
+    ctx.fillStyle = hot > 0.35 ? "#fff8df" : hot > -0.2 ? "#e7c576" : "#3a3120";
     ctx.fill();
   }
+  const hubR = Math.max(28, size * 0.078);
+  const hub = ctx.createRadialGradient(cx - 6, cy - 8, 2, cx, cy, hubR);
+  hub.addColorStop(0, "#24342c");
+  hub.addColorStop(1, "#0b110f");
   ctx.beginPath();
-  ctx.arc(cx, cy, 36, 0, Math.PI * 2);
-  ctx.fillStyle = "#101810";
+  ctx.arc(cx, cy, hubR, 0, Math.PI * 2);
+  ctx.fillStyle = hub;
   ctx.fill();
   ctx.lineWidth = 3;
   ctx.strokeStyle = "#e7c576";
   ctx.stroke();
-  ctx.fillStyle = "#e7c576";
-  ctx.font = "700 16px Outfit, Segoe UI, sans-serif";
+  ctx.fillStyle = "#f0c86a";
+  ctx.font = `700 ${Math.round(hubR * 0.52)}px "Bebas Neue", Impact, sans-serif`;
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
-  ctx.fillText("SF", cx, cy);
+  ctx.fillText("SF", cx, cy + 1);
 };
 Wheel.prototype.spinTo = function spinTo(index, opts = {}) {
   if (this.frame) cancelAnimationFrame(this.frame);
@@ -438,25 +575,39 @@ Wheel.prototype.spinTo = function spinTo(index, opts = {}) {
   const duration = opts.duration ?? 4200;
   const t0 = performance.now();
   let last = -1;
+  let lastRot = this.rot;
+  let lastTime = t0;
+  this.landed = -1;
+  this.spinning = true;
+  this.canvas?.parentElement?.classList.add("spinning");
   return new Promise((resolve) => {
     const step = (now) => {
       if (opts.abort && opts.abort()) {
+        this.spinning = false;
+        this.canvas?.parentElement?.classList.remove("spinning");
         this.frame = 0;
         resolve(-1);
         return;
       }
       const t = Math.min(1, (now - t0) / duration);
-      const eased = 1 - (1 - t) ** 4;
-      this.rot = from + (to - from) * eased;
+      this.rot = from + (to - from) * easeSpin(t);
       this.draw();
       const at = this.indexAtPointer();
       if (at !== last) {
+        const dt = Math.max(1, now - lastTime);
+        const slow = Math.abs(this.rot - lastRot) / dt < 0.0035;
         last = at;
+        lastRot = this.rot;
+        lastTime = now;
+        this.bumpPointer(slow || t > 0.72);
         if (opts.onTick) opts.onTick(at);
       }
       if (t < 1) this.frame = requestAnimationFrame(step);
       else {
-        this.rot = target;
+        this.rot = to;
+        this.landed = index;
+        this.spinning = false;
+        this.canvas?.parentElement?.classList.remove("spinning");
         this.draw();
         this.frame = 0;
         resolve(index);
@@ -510,6 +661,48 @@ function versusLabel(match) {
 function memberNames(item) {
   return item.playerIds.map((id) => player(id)?.name || "?").join(" · ");
 }
+const SQUAD_KITS = ["#e7c576", "#7eb6ff", "#ff4f8b", "#c8ff3d", "#d2a4ff", "#ff9f43", "#5ee0c2", "#f4f4f4"];
+function squadKit(item) {
+  const index = Math.max(0, state.squads.indexOf(item));
+  return SQUAD_KITS[index % SQUAD_KITS.length];
+}
+function squadOf(personId) {
+  return state.squads.find((item) => item.playerIds.includes(personId)) || null;
+}
+function kitMark(item) {
+  if (!item) return "";
+  const index = Math.max(0, state.squads.indexOf(item));
+  return `<span class="kit-mark" style="--kit:${squadKit(item)}">${index + 1}</span>`;
+}
+function peopleHTML(item) {
+  if (!item) return "";
+  return `<span class="people">${item.playerIds.map((id) => {
+    const person = player(id);
+    if (!person) return "";
+    return `<span class="person"><i style="background:${person.color}"></i>${esc(person.name)}</span>`;
+  }).join("")}</span>`;
+}
+function crestHTML(team) {
+  if (!team) return "";
+  const logo = logoFile(team);
+  if (logo) return `<img class="crest" src="${logo}" alt="">`;
+  const ink = luminance(team.colors[0]) > 0.72 ? "#161616" : "#ffffff";
+  return `<i class="crest fallback" style="background:linear-gradient(145deg, ${team.colors[0]}, ${team.colors[1]});color:${ink}">${esc(team.short)}</i>`;
+}
+function sideHTML(item, club) {
+  if (!item) return "";
+  const color = club ? club.colors[0] : squadKit(item);
+  const second = club ? (club.colors[1] || color) : color;
+  const title = club ? club.name : teamName(item);
+  return `
+    <span class="side" style="--a:${color};--b:${second}">
+      ${club ? crestHTML(club) : kitMark(item)}
+      <span class="side-copy">
+        <b>${esc(title)}</b>
+        ${club ? peopleHTML(item) : ""}
+      </span>
+    </span>`;
+}
 function plan(count, size) {
   if (count < 2) return null;
   const full = Math.floor(count / size);
@@ -534,14 +727,15 @@ function phase() {
   return state.matches.length ? "live" : "ready";
 }
 function wheelTiming(manual) {
-  if (state.express) return { duration: 900, turns: 2 };
-  if (!manual) return { duration: 2300, turns: 4 };
-  return { duration: 4200, turns: 6 };
+  if (state.express || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return { duration: 800, turns: 1 };
+  if (!manual) return { duration: 2400, turns: 4 };
+  return { duration: 4600, turns: 7 };
 }
 function toWheelItems(players) {
   return players.map((item) => ({
     label: item.name,
     color: item.color,
+    color2: shadeHex(item.color, -0.12),
     ink: luminance(item.color) > 0.68 ? "#172117" : "#f7f4ec"
   }));
 }
@@ -609,7 +803,7 @@ function standings() {
       if (challengeHit(item, match)) row.bonus += 1;
     });
     row.gd = row.gf - row.ga;
-    row.pts = row.w * 3 + row.d + row.bonus;
+    row.pts = row.w * 3 + row.d;
     return row;
   }).sort((a, b) => b.pts - a.pts || b.gd - a.gd || b.gf - a.gf || teamName(a.squad).localeCompare(teamName(b.squad), "fr"));
 }
@@ -811,7 +1005,7 @@ function paintPlayers(force) {
   const list = $("player-list");
   if (!force && document.activeElement && document.activeElement.closest("#player-list")) return;
   if (!state.players.length) {
-    list.innerHTML = `<li class="empty-copy">Le vestiaire est vide. Ajoute tout le monde.</li>`;
+    list.innerHTML = `<li class="empty-copy">Le vestiaire est vide. Ajoute les joueurs : ils resteront pour les prochaines soirées.</li>`;
     return;
   }
   const isLocked = locked();
@@ -884,15 +1078,15 @@ function paintDraw() {
 function paintSlots() {
   const current = nextSlot();
   $("slot-board").innerHTML = state.squads.map((item, index) => `
-    <article class="squad ${item.playerIds.length >= item.cap ? "full" : ""} ${current && current.id === item.id ? "current" : ""}">
-      <header><span>Équipe ${index + 1}</span><span>${item.playerIds.length}/${item.cap}</span></header>
+    <article class="squad ${item.playerIds.length >= item.cap ? "full" : ""} ${current && current.id === item.id ? "current" : ""}" style="--kit:${squadKit(item)}">
+      <header><span>${kitMark(item)} Équipe ${index + 1}</span><span>${item.playerIds.length}/${item.cap}</span></header>
       <div class="slots">
         ${Array.from({ length: item.cap }, (_, slot) => {
           const person = player(item.playerIds[slot]);
           const isNext = current && current.id === item.id && slot === item.playerIds.length;
           return person
-            ? `<div class="slot filled" style="--c:${person.color}"><b>${esc(person.name)}</b></div>`
-            : `<div class="slot empty ${isNext ? "next" : ""}">Joueur ${slot + 1}</div>`;
+            ? `<div class="slot filled" style="--c:${person.color}"><i class="dot" style="background:${person.color}"></i><b>${esc(person.name)}</b></div>`
+            : `<div class="slot vacant ${isNext ? "next" : ""}">Joueur ${slot + 1}</div>`;
         }).join("")}
       </div>
     </article>
@@ -901,9 +1095,8 @@ function paintSlots() {
 
 function paintPacks() {
   $("pack-grid").innerHTML = state.squads.map((item, index) => {
-    const names = esc(memberNames(item));
     if (!item.teamId) {
-      return `<article data-squad="${item.id}"><div class="pack-foil"><span>PACK ${String(index + 1).padStart(2, "0")}</span><strong>Équipe ${index + 1}</strong><em>${names}</em></div></article>`;
+      return `<article data-squad="${item.id}"><div class="pack-foil"><span>PACK ${String(index + 1).padStart(2, "0")}</span><strong>${kitMark(item)} Équipe ${index + 1}</strong>${peopleHTML(item)}</div></article>`;
     }
     const team = teamById(item.teamId);
     const challenge = challengeById(item.challengeId);
@@ -914,7 +1107,7 @@ function paintPacks() {
         <div class="rarity">${RARITY_LABEL[team.rarity]}</div>
         ${shieldHTML(team)}
         <h3>${esc(team.name)}</h3>
-        <p>${names}</p>
+        ${peopleHTML(item)}
         <p class="defi">Défi : ${esc(challenge ? challenge.label : "aucun")}</p>
         ${canReroll ? `<button type="button" class="ghost sm" data-action="reroll" data-id="${item.id}">Relancer le pack</button>` : ""}
       </article>
@@ -935,13 +1128,19 @@ function paintPacks() {
 }
 
 function paintReady() {
-  $("pack-grid").innerHTML = state.squads.map((item, index) => `
-    <article class="club-card">
-      <div class="rarity">Équipe ${index + 1}</div>
-      <h3>${esc(memberNames(item))}</h3>
-      <p class="defi">${item.challengeId ? `Défi : ${esc(challengeById(item.challengeId)?.label || "—")}` : "Club retiré avant chaque match"}</p>
-    </article>
-  `).join("");
+  $("pack-grid").innerHTML = state.squads.map((item, index) => {
+    const team = teamById(item.teamId);
+    const tone = team ? team.colors[0] : squadKit(item);
+    return `
+      <article class="roster" style="--kit:${squadKit(item)};--a:${tone};--b:${team ? team.colors[1] || tone : tone}">
+        ${team ? shieldHTML(team) : kitMark(item)}
+        <p class="kicker">Équipe ${index + 1}</p>
+        <h3>${esc(team ? team.name : memberNames(item))}</h3>
+        ${peopleHTML(item)}
+        <p class="defi">${item.challengeId ? `Défi : ${esc(challengeById(item.challengeId)?.label || "—")}` : "Club tiré avant chaque match"}</p>
+      </article>
+    `;
+  }).join("");
   const actions = $("pack-actions");
   if (!state.matches.length) {
     actions.innerHTML = `<button type="button" class="gold xl" data-action="build">Lancer le tournoi</button>`;
@@ -962,15 +1161,15 @@ function paintMatches() {
     return;
   }
   const rows = standings();
-  $("leader-line").textContent = rows[0].pts > 0 ? `En tête : ${teamName(rows[0].squad)} · ${rows[0].pts} pts` : "";
+  $("leader-line").innerHTML = rows[0].pts > 0 ? `En tête : <span class="inline-squad">${kitMark(rows[0].squad)}${peopleHTML(rows[0].squad)}</span> · ${rows[0].pts} pts` : "";
   const current = currentMatch();
   if (!current && tournamentOver()) {
     const leaders = rows.filter((row) => row.pts === rows[0].pts && row.gd === rows[0].gd && row.gf === rows[0].gf);
     stage.innerHTML = `
       <div class="card champion">
         <p class="kicker">${leaders.length > 1 ? "Titre partagé" : "Champion de la soirée"}</p>
+        <div class="champ-kits">${leaders.map((row) => `<span class="inline-squad">${kitMark(row.squad)}${peopleHTML(row.squad)}</span>`).join("")}</div>
         <h3>${leaders.map((row) => esc(teamName(row.squad))).join(" · ")}</h3>
-        <p>${leaders.map((row) => esc(memberNames(row.squad))).join(" / ")}</p>
         <button type="button" class="gold" data-go="rank">Voir le classement</button>
       </div>`;
   } else if (current) {
@@ -996,7 +1195,7 @@ function drawClubsHTML(match) {
   return `
     <div class="card">
       <p class="kicker">Journée ${match.round}</p>
-      <h2>${esc(teamName(home))} contre ${esc(teamName(away))}</h2>
+      <div class="faceoff">${sideHTML(home)}${away ? `<span class="vs">contre</span>${sideHTML(away)}` : ""}</div>
       <p class="hint">Ouvre les packs. Chaque équipe reçoit un club pour ce match.</p>
       <button type="button" class="gold xl" data-action="draw-clubs" data-id="${match.id}" ${busy ? "disabled" : ""}>Ouvrir les packs</button>
     </div>
@@ -1035,11 +1234,11 @@ function bugRow(item, match, side) {
   const removed = removedMap();
   const gone = teamRemovedCount(item, removed);
   return `
-    <div class="bug-row">
-      ${team ? shieldHTML(team) : ""}
+    <div class="bug-row" style="--a:${team ? team.colors[0] : squadKit(item)};--b:${team ? team.colors[1] || team.colors[0] : squadKit(item)}">
+      ${team ? shieldHTML(team) : kitMark(item)}
       <div>
         <div class="team-name">${esc(team ? team.name : teamName(item))}</div>
-        <div class="members">${esc(memberNames(item))}${gone ? ` · <span class="gone">${gone} habit${gone > 1 ? "s" : ""} en moins</span>` : ""}</div>
+        <div class="members">${peopleHTML(item)}${gone ? ` <span class="gone">${gone} habit${gone > 1 ? "s" : ""} en moins</span>` : ""}</div>
         <div class="defi">Défi : ${esc(challenge ? challenge.label : "—")}</div>
       </div>
       <div class="score-num">${score}</div>
@@ -1053,7 +1252,7 @@ function bugRow(item, match, side) {
 function matchRowHTML(match) {
   if (!match.away) {
     const item = squad(match.home);
-    return `<div class="bye"><span>Repos</span><span>${item ? esc(teamName(item)) : ""}</span></div>`;
+    return `<div class="bye"><span>Repos</span>${item ? sideHTML(item) : ""}</div>`;
   }
   const home = squad(match.home);
   const away = squad(match.away);
@@ -1068,10 +1267,10 @@ function matchRowHTML(match) {
     gage = `<button type="button" class="gage-tag pending" data-action="blowout" data-id="${match.id}">Choisir : retirer ou remettre</button>`;
   } else if (loser && (stakes.length || restores.length || left)) {
     if (winner && restores.length) {
-      gage += restores.map((item) => `<span class="gage-tag back">${esc(teamName(winner))} remet ${esc(clothById(item.id)?.label || item.label)}</span>`).join("");
+      gage += restores.map((item) => `<span class="gage-tag back">${kitMark(winner)} ${esc(teamName(winner))} remet ${esc(clothById(item.id)?.label || item.label)}</span>`).join("");
     }
     if (stakes.length) {
-      gage += stakes.map((stake) => `<span class="gage-tag">${esc(teamName(loser))} : ${esc(clothById(stake.id)?.label || stake.label)}</span>`).join("");
+      gage += stakes.map((stake) => `<span class="gage-tag">${kitMark(loser)} ${esc(teamName(loser))} : ${esc(clothById(stake.id)?.label || stake.label)}</span>`).join("");
     }
     if (left && clothesLeftFor(match).length) {
       gage += `<button type="button" class="gage-tag pending" data-action="stake" data-id="${match.id}">Tourner la roue</button>`;
@@ -1085,9 +1284,9 @@ function matchRowHTML(match) {
   return `
     <div class="match-row${live ? " now" : ""}">
       <button type="button" class="link versus" data-action="spotlight" data-id="${match.id}">
-        <span class="side"><b>${esc(teamName(home))}</b>${homeClub ? `<small>${esc(homeClub.name)}</small>` : ""}</span>
+        ${sideHTML(home, homeClub)}
         <span class="vs">vs</span>
-        <span class="side"><b>${esc(teamName(away))}</b>${awayClub ? `<small>${esc(awayClub.name)}</small>` : ""}</span>
+        ${sideHTML(away, awayClub)}
       </button>
       <span class="sc">${live && !match.played ? "en cours" : score}</span>
       ${match.played ? `<button type="button" class="ghost sm" data-action="unlock" data-id="${match.id}">Modifier</button>` : `<button type="button" class="ghost sm" data-action="spotlight" data-id="${match.id}">${clubsReady(match) ? "Jouer" : "Packs"}</button>`}
@@ -1115,29 +1314,31 @@ function paintRank() {
     const diff = Math.abs(match.hs - match.as);
     if (!best || diff > best.diff) best = { match, diff };
   });
-  const bestText = best && best.diff > 0
-    ? `${teamName(squad(best.match.hs >= best.match.as ? best.match.home : best.match.away))} ${Math.max(best.match.hs, best.match.as)}–${Math.min(best.match.hs, best.match.as)}`
+  const bestSquad = best && best.diff > 0 ? squad(best.match.hs >= best.match.as ? best.match.home : best.match.away) : null;
+  const bestClub = bestSquad ? sideClub(best.match, best.match.hs >= best.match.as ? "h" : "a") : null;
+  const bestText = bestSquad
+    ? `${crestHTML(bestClub)}${esc(teamName(bestSquad))} ${Math.max(best.match.hs, best.match.as)}–${Math.min(best.match.hs, best.match.as)}`
     : "Encore rien";
   const removed = removedMap();
   tools.innerHTML = `<button type="button" class="ghost" data-action="copy-rank">Copier le classement</button>`;
   stage.innerHTML = `
-    ${tournamentOver() ? `<div class="champion"><p class="kicker">${leaders.length > 1 ? "Titre partagé" : "Champion"}</p><h3>${leaders.map((row) => esc(teamName(row.squad))).join(" · ")}</h3></div>` : ""}
+    ${tournamentOver() ? `<div class="champion"><p class="kicker">${leaders.length > 1 ? "Titre partagé" : "Champion"}</p><div class="champ-kits">${leaders.map((row) => `<span class="inline-squad">${kitMark(row.squad)}${peopleHTML(row.squad)}</span>`).join("")}</div><h3>${leaders.map((row) => esc(teamName(row.squad))).join(" · ")}</h3></div>` : ""}
     ${podium}
     <div class="stats-row">
       <div class="stat"><span>Buts dans la soirée</span><b>${goals}</b></div>
-      <div class="stat"><span>Plus grosse victoire</span><b>${esc(bestText)}</b></div>
+      <div class="stat"><span>Plus grosse victoire</span><b class="stat-line">${bestText}</b></div>
       <div class="stat"><span>Matchs joués</span><b>${realMatches().filter((match) => match.played).length}/${realMatches().length}</b></div>
     </div>
     <div class="table-wrap">
       <table>
         <thead>
-          <tr><th>#</th><th class="team">Équipe</th><th>J</th><th>V</th><th>N</th><th>D</th><th>BP</th><th>BC</th><th>Diff</th><th>Bonus</th><th>Pts</th><th>Habits retirés</th></tr>
+          <tr><th>#</th><th class="team">Équipe</th><th>J</th><th>V</th><th>N</th><th>D</th><th>BP</th><th>BC</th><th>Diff</th><th>Défis</th><th>Pts</th><th>Habits retirés</th></tr>
         </thead>
         <tbody>
           ${rows.map((row, index) => `
             <tr class="${index === 0 && row.pts > 0 ? "leader" : ""}">
               <td>${index + 1}</td>
-              <td class="team">${esc(teamName(row.squad))}</td>
+              <td class="team"><span class="rank-id">${kitMark(row.squad)}<span class="rank-copy">${peopleHTML(row.squad)}</span></span></td>
               <td>${row.played}</td><td>${row.w}</td><td>${row.d}</td><td>${row.l}</td>
               <td>${row.gf}</td><td>${row.ga}</td><td>${row.gd > 0 ? `+${row.gd}` : row.gd}</td>
               <td>${row.bonus}</td><td class="pts">${row.pts}</td><td>${teamRemovedCount(row.squad, removed)}</td>
@@ -1146,7 +1347,7 @@ function paintRank() {
         </tbody>
       </table>
     </div>
-    <p class="hint">Victoire 3 pts · Nul 1 pt · Défi +1</p>
+    <p class="hint">Victoire 3 pts · Égalité 1 pt · Défaite 0 pt</p>
     ${wardrobeHTML(removed)}
   `;
 }
@@ -1210,13 +1411,14 @@ function figureSVG(person, gone, fresh) {
 function figureCard(person, gone, fresh, extra = "") {
   const level = undressLevel(gone.length);
   const dropped = fresh.map((id) => clothById(id)?.label).filter(Boolean);
+  const group = squadOf(person.id);
   return `
     <article class="fig-card heat-${level.heat} ${fresh.length ? "shiver" : ""} ${extra}">
       <div class="fig-wrap">
         ${figureSVG(person, gone, fresh)}
         ${dropped.map((label, index) => `<span class="drop-tag" style="animation-delay:${index * 0.25}s">−${esc(label)}</span>`).join("")}
       </div>
-      <strong>${esc(person.name)}</strong>
+      <div class="fig-name">${group ? kitMark(group) : ""}<strong>${esc(person.name)}</strong></div>
       <div class="heat-bar"><b style="width:${level.pct}%"></b></div>
       <small>${gone.length}/${CLOTHES.length} retirés</small>
     </article>
@@ -1254,7 +1456,7 @@ function podiumHTML(rows) {
     { row: rows[1], cls: "second", label: "2e" },
     { row: rows[2], cls: "third", label: "3e" }
   ].filter((place) => place.row);
-  return `<div class="podium">${places.map((place) => `<article class="pod ${place.cls}"><div class="place">${place.label}</div><strong>${esc(teamName(place.row.squad))}</strong><p class="pts">${place.row.pts} pts</p></article>`).join("")}</div>`;
+  return `<div class="podium">${places.map((place) => `<article class="pod ${place.cls}" style="--a:${squadKit(place.row.squad)}"><div class="place">${place.label}</div>${peopleHTML(place.row.squad)}<p class="pts">${place.row.pts} pts</p></article>`).join("")}</div>`;
 }
 
 function refresh() {
@@ -1526,14 +1728,39 @@ function revealSchedule() {
   return true;
 }
 
-function clubCardHTML(team, caption) {
-  return `
-    <article class="club-card is-reveal" style="--rarity:${rarityColor(team.rarity)}">
-      <div class="rarity">${RARITY_LABEL[team.rarity]}</div>
-      ${shieldHTML(team)}
-      <h3>${esc(team.name)}</h3>
-      <p>${esc(caption)}</p>
-    </article>`;
+function foilInner(name) {
+  return `<div class="pack-foil"><span>ULTIMATE</span><strong>${esc(name)}</strong><em>Club du match</em></div>`;
+}
+function clubMeta(team) {
+  if (team.kind === "nation") return "Sélection";
+  return team.league || "Club";
+}
+function fillPackSlot(slot, team, caption) {
+  slot.className = `club-card is-reveal rarity-${team.rarity || "rare"}`;
+  slot.style.setProperty("--rarity", rarityColor(team.rarity));
+  slot.innerHTML = `
+    <div class="card-rays" aria-hidden="true"></div>
+    <div class="rarity">${RARITY_LABEL[team.rarity] || "Rare"}</div>
+    ${shieldHTML(team, true)}
+    <h3>${esc(team.name)}</h3>
+    <p class="card-meta">${esc(clubMeta(team))}${team.place ? ` · ${esc(team.place)}` : ""}</p>
+    <p>${esc(caption)}</p>`;
+}
+function flashPack(root) {
+  const el = document.createElement("div");
+  el.className = "unpack-flash";
+  root.appendChild(el);
+  requestAnimationFrame(() => el.classList.add("on"));
+  setTimeout(() => el.remove(), 480);
+}
+function punchReveal(team) {
+  if (team.rarity === "legende") {
+    confetti.burst(110);
+    Sfx.fanfare();
+  } else if (team.rarity === "epique") {
+    confetti.burst(60);
+    Sfx.reveal("epique");
+  } else Sfx.reveal(team.rarity || "rare");
 }
 
 async function openMatchPacks(id) {
@@ -1548,31 +1775,37 @@ async function openMatchPacks(id) {
   const home = squad(match.home);
   const away = squad(match.away);
   const stage = $("match-stage");
+  const quick = state.express || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   stage.innerHTML = `
-    <div class="pack-grid">
-      <article><div class="pack-foil"><span>PACK</span><strong>${esc(teamName(home))}</strong><em>Club du match</em></div></article>
-      <article><div class="pack-foil"><span>PACK</span><strong>${esc(teamName(away))}</strong><em>Club du match</em></div></article>
+    <div class="unpack">
+      <div class="unpack-lights" aria-hidden="true"></div>
+      <p class="kicker">Pack opening · Journée ${match.round}</p>
+      <div class="pack-grid unpack-grid">
+        <article data-pack="h">${foilInner(teamName(home))}</article>
+        <article data-pack="a">${foilInner(teamName(away))}</article>
+      </div>
     </div>`;
   try {
-    const cards = stage.querySelectorAll(".pack-foil");
-    if (!state.express) {
-      cards.forEach((card) => card.classList.add("is-shaking"));
-      Sfx.pack();
-      await wait(680);
-    } else {
-      Sfx.pack();
+    const foils = stage.querySelectorAll(".pack-foil");
+    Sfx.pack();
+    if (!quick) {
+      foils.forEach((card) => card.classList.add("is-shaking"));
+      await wait(780);
+      flashPack(stage.querySelector(".unpack"));
       await wait(140);
-    }
+    } else await wait(140);
     match.homeClub = pool[0];
     match.awayClub = pool[1];
     save();
     const homeClub = sideClub(match, "h");
     const awayClub = sideClub(match, "a");
-    stage.innerHTML = `<div class="pack-grid">${clubCardHTML(homeClub, teamName(home))}${clubCardHTML(awayClub, teamName(away))}</div>`;
-    if (homeClub.rarity === "legende" || awayClub.rarity === "legende") confetti.burst(90);
-    Sfx.reveal(homeClub.rarity === "legende" || awayClub.rarity === "legende" ? "legende" : "epique");
+    fillPackSlot(stage.querySelector('[data-pack="h"]'), homeClub, teamName(home));
+    punchReveal(homeClub);
+    await wait(quick ? 240 : 720);
+    fillPackSlot(stage.querySelector('[data-pack="a"]'), awayClub, teamName(away));
+    punchReveal(awayClub);
     toast(`${homeClub.name} contre ${awayClub.name}`);
-    await wait(state.express ? 320 : 900);
+    await wait(quick ? 320 : 900);
   } finally {
     busy = false;
     if (state.view === "matches") paintMatches();
@@ -1636,7 +1869,7 @@ function openBlowoutChoice(id) {
     : "Rien enlevé au match d’avant";
   openModal(`
     <div class="modal-head"><h2>Écart de ${goalGap(match)}</h2><button type="button" data-action="close-modal" aria-label="Fermer">×</button></div>
-    <p class="modal-copy"><b>${esc(teamName(winner))}</b> choisit.</p>
+    <p class="modal-copy">${sideHTML(winner)} choisit.</p>
     <div class="choice-grid">
       <button type="button" class="choice" data-action="pick-strip" data-id="${match.id}" ${canStrip ? "" : "disabled"}>
         <strong>Retirer un vêtement</strong>
@@ -1686,12 +1919,10 @@ function openStake(id) {
   if (!pool.length || remainingSpins(match) <= 0) return toast(pool.length ? "Roue déjà faite." : `${teamName(loser)} n’a plus rien à retirer.`);
   const token = ++stakeToken;
   const colors = ["#1e3d30", "#f0c86a", "#8e3a52", "#c8ff3d", "#234838", "#ff4f8b", "#315c48", "#7eb6ff", "#5a2a3a", "#fff0c2"];
-  const names = loser.playerIds.map((pid) => player(pid)?.name || "?");
-  const who = names.length > 1 ? `${names.slice(0, -1).join(", ")} et ${names[names.length - 1]}` : names[0];
   openModal(`
     <div class="modal-head"><h2>La roue</h2><button type="button" data-action="close-modal" aria-label="Fermer">×</button></div>
-    <p class="modal-copy"><b>${esc(teamName(loser))}</b> · ${esc(who)} retire l’habit tiré.</p>
-    <div class="stake-wheel"><div class="pointer" aria-hidden="true"></div><canvas id="stake-wheel" width="360" height="360"></canvas></div>
+    <p class="modal-copy">${sideHTML(loser)} retire l’habit tiré.</p>
+    <div class="stake-stage"><div class="pointer" aria-hidden="true"></div><div class="stake-wheel"><canvas id="stake-wheel" width="360" height="360"></canvas></div></div>
     <div class="btn-row center"><button type="button" class="gold xl" id="stake-spin">Tourner la roue</button></div>
   `, "Roue des habits");
   const wheel = new Wheel();
@@ -1715,7 +1946,7 @@ function openStake(id) {
     confetti.burst(item.heat >= 3 ? 140 : 70);
     openModal(`
       <div class="stake-result">
-        <p class="who">${esc(who)}</p>
+        <p class="who">${peopleHTML(loser)}</p>
         <strong>${esc(item.full)}</strong>
         <button type="button" class="gold" data-action="close-stake" data-id="${match.id}">C’est retiré</button>
       </div>
@@ -1863,7 +2094,13 @@ const actions = {
   "remove-player"(button) {
     if (locked()) return;
     state.players = state.players.filter((item) => item.id !== button.dataset.id);
-    refresh();
+    save();
+    paintChrome();
+    if (state.view === "setup") {
+      paintSetupMeta();
+      paintPlayers(true);
+      paintTeams();
+    }
   },
   "set-format"(button) {
     if (locked()) return toast("Tirage déjà lancé.");
@@ -2034,17 +2271,27 @@ const actions = {
   async "reset-all"() {
     const ok = await ask({
       title: "Nouvelle soirée",
-      text: "Tout est effacé : joueurs, tirage et classement.",
-      confirm: "Tout effacer",
+      text: "Tirage, scores et classement repartent à zéro. Les joueurs restent : tu peux en ajouter ou en retirer avant de relancer.",
+      confirm: "Nouvelle soirée",
       danger: true
     });
     if (!ok) return;
-    const keep = { mute: state.mute, express: state.express, tv: state.tv };
-    state = { ...fresh(), ...keep, view: "setup" };
-    $("night").value = state.night;
+    const players = cleanRoster(state.players.length ? state.players : rememberedPlayers());
+    const keep = {
+      mute: state.mute,
+      express: state.express,
+      tv: state.tv,
+      format: state.format,
+      teamFilter: state.teamFilter,
+      selectedTeams: state.selectedTeams.slice(),
+      catalog: state.catalog
+    };
+    state = { ...fresh(), ...keep, players, night: "", view: "setup" };
+    $("night").value = "";
     $("team-search").value = "";
-    toast("Nouvelle soirée.");
+    toast(players.length ? "Nouvelle soirée. Les joueurs sont déjà là." : "Nouvelle soirée.");
     show("setup");
+    $("night").focus();
   },
   async "copy-rank"() {
     try {
@@ -2060,7 +2307,7 @@ const actions = {
       <ol class="rules">
         <li>Équipes tirées à la roue. Ensuite, tout le calendrier s’affiche.</li>
         <li>Au moment de jouer un match, on ouvre deux packs : un club par équipe. Puis on entre le score.</li>
-        <li>Victoire 3 pts, nul 1 pt, défi réussi +1.</li>
+        <li>Victoire 3 pts, égalité 1 pt, défaite 0 pt.</li>
         <li>Égalité : différence de buts, puis buts marqués.</li>
         <li>Défaite : une seule roue. Le perdant retire l’habit tiré.</li>
         <li>Plus de 3 buts d’écart : le gagnant choisit. Cette roue, ou remettre l’habit du match d’avant.</li>
@@ -2161,6 +2408,11 @@ function init() {
   if (new Set(ids).size !== ids.length) console.error("Identifiants d’équipes en double");
   state = load();
   sanitize();
+  if (!state.players.length && !state.squads.length) {
+    const remembered = rememberedPlayers();
+    if (remembered.length) state.players = remembered;
+  }
+  if (state.players.length) rememberPlayers(state.players);
   if (!localStorage.getItem(STORE_KEY) && window.matchMedia("(prefers-reduced-motion: reduce)").matches) state.express = true;
   Sfx.enabled = !state.mute;
   $("night").value = state.night;
